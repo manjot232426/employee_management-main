@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Manager - Premium</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="content">
+
+    <!-- HEADER WITHOUT SIDEBAR & WITHOUT V ICON -->
+    <header class="topbar">
+        <h1>Employee Management System</h1>
+    </header>
+
+    <!-- ADD EMPLOYEE CARD -->
+    <div class="card form-card">
+        <h2 id="form-title">Add Employee</h2>
+
+        <div class="form-grid">
+
+            <input type="hidden" id="emp-id">
+
+            <div>
+                <label>Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div>
+                <label>Age</label>
+                <input type="number" id="age">
+            </div>
+
+            <div>
+                <label>Position</label>
+                <input type="text" id="position">
+            </div>
+
+            <div>
+                <label>Department</label>
+                <input type="text" id="department">
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input type="email" id="email">
+            </div>
+
+            <div>
+                <label>Salary</label>
+                <input type="number" id="salary">
+            </div>
+
+            <div>
+                <label>Experience (Years)</label>
+                <input type="number" id="experience">
+            </div>
+
+        </div>
+
+        <button id="submit-btn" onclick="submitForm()">Add Employee</button>
+    </div>
+
+    <!-- TABLE -->
+    <div class="card table-card">
+        <h2>All Employees</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Position</th>
+                    <th>Department</th>
+                    <th>Email</th>
+                    <th>Salary</th>
+                    <th>Experience</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

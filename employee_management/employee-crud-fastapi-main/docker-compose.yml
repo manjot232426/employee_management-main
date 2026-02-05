@@ -1,0 +1,49 @@
+# version: "3.9"
+
+# services:
+#   db:
+#     image: mysql:8.0
+#     container_name: employees_mysql
+#     restart: unless-stopped
+#     environment:
+#       MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-rootpass}
+#       MYSQL_DATABASE: ${DB_NAME:-people_db}
+#       MYSQL_USER: ${DB_USER:-appuser}
+#       MYSQL_PASSWORD: ${DB_PASSWORD:-apppass}
+#     ports:
+#       - "3306:3306"
+#     volumes:
+#       - mysql_data:/var/lib/mysql
+#     healthcheck:
+#       test: ["CMD-SHELL", "mysqladmin ping -h 127.0.0.1 -u${DB_USER:-appuser} -p${DB_PASSWORD:-apppass} || exit 1"]
+#       interval: 5s
+#       timeout: 3s
+#       retries: 20
+
+#   api:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     container_name: employees_api
+#     restart: unless-stopped
+#     depends_on:
+#       db:
+#         condition: service_healthy
+#     env_file:
+#       - .env
+#     environment:
+#       # These defaults are used if not provided in .env
+#       DB_HOST: db
+#       DB_PORT: 3306
+#       DB_NAME: ${DB_NAME:-people_db}
+#       DB_USER: ${DB_USER:-appuser}
+#       DB_PASSWORD: ${DB_PASSWORD:-apppass}
+#       DB_POOL_SIZE: 5
+#     ports:
+#       - "8000:8000"
+#     volumes:
+#       # Optional: mount frontend if you frequently iterate on it during dev
+#       - ./frontend:/app/frontend:ro
+
+# volumes:
+#   mysql_data:
